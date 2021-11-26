@@ -4,4 +4,11 @@ Active MQ
 docker run -p 61616:61616 -p 8161:8161 rmohr/activemq
 
 docker pull prom/prometheus
+
 docker run -d --name=prometheus -p 9090:9090 -v /Users/b0k02nq/Desktop/dev/metrics-service/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
+
+docker stop 7ee00
+
+--to remove container
+docker rm $(docker ps -aq --filter name=/prometheus)
